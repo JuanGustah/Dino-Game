@@ -7,7 +7,12 @@ let isJumping=false;
 
 let background=document.getElementById("background");
 
+
+let darkModeButton=document.getElementById("dark");
+let isDark=false;
+
 function handleKeyUp(event){
+    event.preventDefault();
     const acceptedKeys={
         32:spacePressed,
     }  
@@ -15,7 +20,6 @@ function handleKeyUp(event){
     spaceFunction&&!isJumping?spaceFunction():null
 }
 function spacePressed(){
-    console.log(gameStart)
     if(!gameStart){
         gameControl(true)
     }else{
@@ -112,6 +116,26 @@ function gameControl(verifier){
         dino.id="dino-dead"
     }
 }
+function darkMode(event){
+    let [body]=document.getElementsByTagName("body");
+    if(isDark){
+        isDark=false;
+        body.style.background="#fafafa"
+        body.style.color="#1d1d1d"
+        darkModeButton.style.backgroundColor="#252525"
+        darkModeButton.style.color="#fafafa"
+        background.style.backgroundImage="url(background.png)"
+    }else{
+        isDark=true;
+        body.style.background="#050505"
+        body.style.color="#fafafa"
+        darkModeButton.style.backgroundColor="#fafafa"
+        darkModeButton.style.color="#252525"
+        background.style.backgroundImage="url(background-alt.png)"
+    }
+}
 
 
-document.addEventListener('keyup',handleKeyUp)
+document.addEventListener('keyup',handleKeyUp);
+darkModeButton.addEventListener("click",darkMode);
+
