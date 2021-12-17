@@ -1,0 +1,79 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: #fafafa;
+    font-family: 'Press Start 2P', cursive;
+}
+h1,h4{
+    color:rgb(29, 29, 29);
+    text-align: center;
+}
+h1{
+    margin-top: 3rem;
+}
+h4{
+    margin-bottom: 2rem;
+}
+.container{
+    width: 40rem;
+    height: 12rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#background{
+    background-image: url(background.png);
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 12.5rem;
+    /* animation: slideright 600s infinite linear; */
+}
+#dino,#dino-dead{
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    bottom: 0;
+    left:1rem;
+}
+#dino{
+    background-image:url(dino.png);
+}
+#dino-dead{
+    background-image:url(dino-dead.png);
+}
+#score{
+    position: absolute;
+    right: 0;
+    font-weight: bold;
+}
+.cactus{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-image: url(cactus.png);
+    bottom: 0px;
+}
+#end-game-message{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+#dark{
+    background-color: #252525;
+    color: #f0f0f0;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 3rem;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+#dark:hover{
+    box-shadow: 0 0px 25px #2525258f ;
+}
